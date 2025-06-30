@@ -7,16 +7,16 @@ Transform your productivity with TaskFlow - a stunning rainbow-themed to-do appl
 ## 🌈 Screenshots
 
 ### Main Dashboard
-![TaskFlow Main Dashboard](https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop)
+![TaskFlow Main Dashboard](./screenshots/Main-landing-page.png)
 *Beautiful rainbow gradient background with comprehensive task management*
 
-### Task Management
-![Task Management Interface](https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop)
+### Task Management Interface
+![Task Management Interface](./screenshots/task-list.png)
 *Intuitive task creation and organization with priority levels and categories*
 
-### Progress Tracking
-![Progress Overview](https://images.pexels.com/photos/590022/pexels-photo-590022.jpg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop)
-*Real-time statistics and progress visualization with rainbow progress bars*
+### Responsive Design
+![Responsive Design](./screenshots/Responsive-design.png)
+*Mobile-first responsive design that works perfectly on all devices*
 
 ## ✨ Features
 

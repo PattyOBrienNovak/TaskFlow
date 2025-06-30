@@ -111,25 +111,25 @@ const SAMPLE_TASKS: Task[] = [
 ];
 
 export const useTasks = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(SAMPLE_TASKS);
   const [categories, setCategories] = useState<Category[]>(DEFAULT_CATEGORIES);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount, but always start with sample tasks
   useEffect(() => {
     const savedTasks = localStorage.getItem('bolt-todo-tasks');
     const savedCategories = localStorage.getItem('bolt-todo-categories');
     
-    if (savedTasks) {
+    // Only load from localStorage if it exists and has content
+    if (savedTasks && savedTasks !== '[]') {
       try {
-        setTasks(JSON.parse(savedTasks));
+        const parsedTasks = JSON.parse(savedTasks);
+        if (parsedTasks.length > 0) {
+          setTasks(parsedTasks);
+        }
       } catch (error) {
         console.error('Error loading tasks:', error);
-        // If there's an error loading, use sample tasks
-        setTasks(SAMPLE_TASKS);
+        // Keep sample tasks on error
       }
-    } else {
-      // If no saved tasks, use sample tasks
-      setTasks(SAMPLE_TASKS);
     }
     
     if (savedCategories) {

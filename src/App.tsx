@@ -21,25 +21,28 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 via-blue-500 via-green-400 via-yellow-400 to-red-500 animate-gradient-x">
       <div className="min-h-screen bg-white/10 backdrop-blur-sm">
-        {/* Bolt Hackathon Badge - Responsive positioning */}
+        {/* Built with Bolt.new Badge - Responsive positioning */}
         <div className="fixed top-4 right-4 z-50 md:top-6 md:right-6">
-          <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-full shadow-2xl border-2 border-white/30 backdrop-blur-md hover:scale-105 transition-all duration-300 cursor-pointer group">
+          <a 
+            href="https://bolt.new" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-full shadow-2xl border-2 border-white/30 backdrop-blur-md hover:scale-105 transition-all duration-300 cursor-pointer group"
+          >
             <div className="flex items-center gap-1.5 md:gap-2">
               <div className="p-0.5 md:p-1 bg-white/20 rounded-full">
                 <Zap size={12} className="text-yellow-300 md:w-4 md:h-4" />
               </div>
               <div className="text-xs md:text-sm font-bold">
                 <div className="flex items-center gap-1">
-                  <span>Bolt</span>
+                  <span>Built with</span>
                   <Sparkles size={10} className="text-yellow-300 animate-pulse md:w-3 md:h-3" />
-                  <span className="hidden sm:inline">Hackathon</span>
-                  <span className="sm:hidden">H</span>
                 </div>
-                <div className="text-xs text-white/80 font-medium leading-none">2025</div>
+                <div className="text-xs text-white/90 font-bold leading-none">Bolt.new</div>
               </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-          </div>
+          </a>
         </div>
 
         <div className="container mx-auto px-4 py-8 max-w-4xl">

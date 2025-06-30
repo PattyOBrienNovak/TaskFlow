@@ -8,6 +8,108 @@ const DEFAULT_CATEGORIES: Category[] = [
   { id: 'health', name: '❤️ Health', color: 'bg-gradient-to-r from-red-500 to-orange-500', icon: 'heart' },
 ];
 
+const SAMPLE_TASKS: Task[] = [
+  {
+    id: 'sample-1',
+    title: 'Finish Bolt Hackathon submission',
+    description: 'Complete the rainbow to-do app with all features and deploy it for the hackathon',
+    completed: false,
+    priority: 'high',
+    category: 'work',
+    dueDate: '2025-01-20',
+    createdAt: '2025-01-15T10:00:00.000Z',
+  },
+  {
+    id: 'sample-2',
+    title: 'Buy groceries for the week',
+    description: 'Get fresh vegetables, fruits, and pantry essentials. Don\'t forget the rainbow sprinkles! 🌈',
+    completed: false,
+    priority: 'medium',
+    category: 'shopping',
+    dueDate: '2025-01-18',
+    createdAt: '2025-01-15T09:30:00.000Z',
+  },
+  {
+    id: 'sample-3',
+    title: 'Morning yoga session',
+    description: 'Start the day with 30 minutes of mindful yoga and meditation',
+    completed: true,
+    priority: 'low',
+    category: 'health',
+    createdAt: '2025-01-15T06:00:00.000Z',
+    completedAt: '2025-01-15T07:00:00.000Z',
+  },
+  {
+    id: 'sample-4',
+    title: 'Plan weekend adventure',
+    description: 'Research hiking trails and plan a fun outdoor adventure with friends',
+    completed: false,
+    priority: 'low',
+    category: 'personal',
+    dueDate: '2025-01-19',
+    createdAt: '2025-01-14T20:00:00.000Z',
+  },
+  {
+    id: 'sample-5',
+    title: 'Team meeting preparation',
+    description: 'Prepare slides and agenda for tomorrow\'s quarterly review meeting',
+    completed: false,
+    priority: 'high',
+    category: 'work',
+    dueDate: '2025-01-17',
+    createdAt: '2025-01-14T15:00:00.000Z',
+  },
+  {
+    id: 'sample-6',
+    title: 'Call mom and dad',
+    description: 'Catch up with parents and share updates about work and life',
+    completed: true,
+    priority: 'medium',
+    category: 'personal',
+    createdAt: '2025-01-13T18:00:00.000Z',
+    completedAt: '2025-01-14T19:30:00.000Z',
+  },
+  {
+    id: 'sample-7',
+    title: 'Book dentist appointment',
+    description: 'Schedule routine cleaning and checkup for next month',
+    completed: false,
+    priority: 'medium',
+    category: 'health',
+    dueDate: '2025-01-25',
+    createdAt: '2025-01-13T12:00:00.000Z',
+  },
+  {
+    id: 'sample-8',
+    title: 'Order birthday gift for Sarah',
+    description: 'Find the perfect gift for Sarah\'s birthday party next week',
+    completed: false,
+    priority: 'high',
+    category: 'shopping',
+    dueDate: '2025-01-22',
+    createdAt: '2025-01-12T16:00:00.000Z',
+  },
+  {
+    id: 'sample-9',
+    title: 'Learn new recipe',
+    description: 'Try making homemade pasta with rainbow vegetables for a colorful dinner',
+    completed: false,
+    priority: 'low',
+    category: 'personal',
+    createdAt: '2025-01-12T14:00:00.000Z',
+  },
+  {
+    id: 'sample-10',
+    title: 'Update portfolio website',
+    description: 'Add recent projects and refresh the design with modern aesthetics',
+    completed: true,
+    priority: 'medium',
+    category: 'work',
+    createdAt: '2025-01-10T11:00:00.000Z',
+    completedAt: '2025-01-11T16:45:00.000Z',
+  },
+];
+
 export const useTasks = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [categories, setCategories] = useState<Category[]>(DEFAULT_CATEGORIES);
@@ -22,7 +124,12 @@ export const useTasks = () => {
         setTasks(JSON.parse(savedTasks));
       } catch (error) {
         console.error('Error loading tasks:', error);
+        // If there's an error loading, use sample tasks
+        setTasks(SAMPLE_TASKS);
       }
+    } else {
+      // If no saved tasks, use sample tasks
+      setTasks(SAMPLE_TASKS);
     }
     
     if (savedCategories) {

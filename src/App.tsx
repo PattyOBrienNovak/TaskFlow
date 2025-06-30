@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckSquare, Sparkles } from 'lucide-react';
+import { CheckSquare, Sparkles, Zap } from 'lucide-react';
 import { useTasks } from './hooks/useTasks';
 import { TaskInput } from './components/TaskInput';
 import { TaskList } from './components/TaskList';
@@ -21,6 +21,26 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-500 via-blue-500 via-green-400 via-yellow-400 to-red-500 animate-gradient-x">
       <div className="min-h-screen bg-white/10 backdrop-blur-sm">
+        {/* Bolt Hackathon Badge */}
+        <div className="fixed top-4 right-4 z-50">
+          <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white px-4 py-2 rounded-full shadow-2xl border-2 border-white/30 backdrop-blur-md hover:scale-105 transition-all duration-300 cursor-pointer group">
+            <div className="flex items-center gap-2">
+              <div className="p-1 bg-white/20 rounded-full">
+                <Zap size={16} className="text-yellow-300" />
+              </div>
+              <div className="text-sm font-bold">
+                <div className="flex items-center gap-1">
+                  <span>Bolt</span>
+                  <Sparkles size={12} className="text-yellow-300 animate-pulse" />
+                  <span>Hackathon</span>
+                </div>
+                <div className="text-xs text-white/80 font-medium">2025</div>
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          </div>
+        </div>
+
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Header */}
           <div className="text-center mb-8">
